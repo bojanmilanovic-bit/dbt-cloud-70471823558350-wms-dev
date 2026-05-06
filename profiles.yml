@@ -1,0 +1,10 @@
+default:
+  target: dev
+  outputs:
+    dev:
+      type: databricks
+      host: adb-3762550723809498.18.azuredatabricks.net
+      http_path: sql/protocolv1/o/3762550723809498/0810-122840-7w86417f
+      token: "{{ env_var('DATABRICKS_TOKEN') }}"
+      schema: meta_bronze
+      catalog: main
