@@ -1,0 +1,15 @@
+version: 2
+
+models:
+  - name: orders_stg
+    description: "Cleaned and typed orders from EUP source table eup_f40013de_f70_psaveak"
+    columns:
+      - name: outbound_order_id
+        description: "Unique composite key built from client, firm and order number"
+        tests:
+          - unique
+          - not_null
+      - name: client_code
+        description: "Cleaned and uppercased client identifier"
+      - name: status_code_raw
+        description: "Raw status code from AKPSTS, mapped to process status in intermediate layer"

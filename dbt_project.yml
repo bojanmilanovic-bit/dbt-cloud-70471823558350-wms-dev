@@ -37,15 +37,12 @@ clean-targets:         # directories to be removed by `dbt clean`
 
 models:
   my_new_project:
-
-    bronze:
-      +schema: meta_bronze
+    staging:
       +materialized: view
-
-    silver:
-      +schema: meta_silver
+      +schema: dbt_karsic
+    intermediate:
       +materialized: view
-
-    gold:
-      +schema: meta_gold
+      +schema: dbt_karsic
+    marts:
       +materialized: table
+      +schema: dbt_karsic
